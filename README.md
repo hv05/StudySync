@@ -12,11 +12,4 @@ This project serves as a strong front-end template for developers looking to bui
 
 ---
 
-## 🌐 Live Demo
-
-> [Add your live demo link here, e.g. GitHub Pages or Netlify]
-
----
-
-## 📁 Project Structure
 
