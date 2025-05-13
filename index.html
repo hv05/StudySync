@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            text-align: center;
+            padding: 1.3rem;
+        }
+        .container{
+            min-width: 1280px;
+            text-decoration: none;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            
+        }
+        .nav{
+          margin-top: 8px;
+          margin-left: 500px;
+          display: none;
+          gap: 20px;
+          
+        }
+        @media screen and (min-width:768px){
+            .nav{
+               display: flex; 
+            }
+            
+        }
+        .navlink{
+            text-decoration: none;
+            color: rgb(60, 66, 66);
+            font-size: 1.8rem;
+            font-weight: bold;
+            gap: 20px;
+        }
+        .logo{
+            display: flex;
+            gap: 2px;
+            margin-left: 20px;
+            
+        }
+        .logo-text{
+            font-size:1.7rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-top: 0.7rem;
+
+        }
+        .btn{
+            display: none;
+            background-color: rgb(30, 30, 161);
+            color: white;
+            padding: 0.5rem 1.15rem;
+            border: none;
+            border-radius: 0.375rem;
+           margin-right: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        @media screen and (min-width:768px){
+            .btn{
+               display: block; 
+            }
+            
+        }
+        .logo-icon{
+               height: 40px;
+               margin-top: 8px;
+              
+        }
+        .menu-btn{
+            height: 25px;
+            width: 25px;
+            background-color: rgb(0, 0, 0);
+            margin-top: 10px;
+            border: 5px solid black;
+            display: none;
+        }
+        @media screen and (max-width:768px){
+            .menu-btn{
+               display: block; 
+            }
+        }
+        .item{
+            height: 80vh;
+            width: 70vw;
+            margin: auto;
+           
+            
+            gap: 1rem;
+            overflow-x: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .head{
+            display: flex;
+            color: blue;
+            font-size: 1.35rem;
+            justify-content: start;
+            padding-left: 10px;
+        }
+        .text{
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+        .btn1{
+            background: blue;
+            color: white;
+            font-weight: 800;
+            border-radius: 3px;
+            padding: 3px;
+        }
+        .btn2{
+            background: #333333;
+            color: white;
+            font-weight: 800;
+            border-radius: 3px;
+            padding: 3px;
+        }
+        .button{
+            display: flex;
+            gap: 1rem;
+            padding-left: 0;
+            justify-content: center;
+        }
+        .img{
+            height: 50vh;
+            
+            border: 2px solid rgb(87, 85, 85);
+            border-radius: 1rem 
+
+        }
+        @media screen and (min-width:768px){
+            .item{
+                flex-direction: row;
+            }
+            .leftbox{
+                max-width: 50%;
+                text-align: left;
+            }
+            .button{
+                display: flex;
+                justify-content: start;
+            }
+            .contentbox{
+                overflow: none;
+            }
+            .text{
+                font-size: 3.5rem;
+            }
+            .img{
+                height: 55vh;
+        
+            }
+            
+        }
+        .leftbox{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            animation: slidefromleft 1s ease forwards 0s;
+            opacity: 1;
+        }
+        @keyframes slidefromleft {
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+        }
+        .contentbox{
+            margin-top: 1rem;
+            margin-top: -1.5rem;
+            margin-bottom: -1.5rem;
+        }
+        .com-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display:flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            animation: slidefromleft 1s ease forwards 0s;
+            opacity: 1;
+
+        }
+        
+        @keyframes slidefromleft {
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+        }
+        .com-grid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        
+            gap: 3rem;
+            padding: 1rem;
+            background-color: lightgrey;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border-radius: 7px;
+        }
+        #h2{
+            font-weight: bold;
+        }
+        @media screen and (min-width:760px) {
+            .com-grid{
+                grid-template-columns: repeat(4,1fr);
+            }
+            
+        }
+        .feature{
+            background: rgb(242, 239, 239);
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .feature-content{
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .main-info{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+           
+        }
+        #h2{
+            font-size: 2rem;
+        }
+        .para{
+            color: #555353;
+        }
+        .feature-grid{
+            margin-top: 1.3rem;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(2,1fr);
+    
+            justify-content: center;
+        }
+        .feature-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #567ccf;
+            padding: 2rem;
+            border-radius: 1rem;
+            gap: 1rem;
+            transition: transform 0.3s linear ;
+        }
+        .feature-card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .feature-title{
+            color:white ;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .feature-desc{
+            color: white;
+        }
+        .feature-card:nth-child(1){
+            background-color: #4a90e2;
+        }
+        .feature-card:nth-child(2){
+            background-color: #ff2689;
+        }
+        .feature-card:nth-child(3){
+            background-color: rgba(198, 57, 10, 0.714);
+        }
+        .feature-card:nth-child(4){
+            background-color: #44bfc3;
+        }
+        .feature-card:nth-child(5){
+            background-color: #77b05d;
+        }
+        .feature-card:nth-child(6){
+            background-color: #7d78b1;
+        }
+        @media screen and(max-width:640px) {
+            .feature-grid{
+               
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+        .test-container{
+            max-width: 1280px;
+            background-color: white;
+            margin: 0 auto;
+            padding:2rem;
+        }
+        .test-content{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .test-grid{
+            display: grid;
+            margin-left:6rem ;
+            grid-template-columns: repeat(3,1fr);
+            gap:2rem;
+            width: 400px;
+           
+        }
+        .test-avatar{
+            height: 1rem;
+            width: 1px;
+        }
+        .test-card{
+            display: flex;
+            justify-content: center;
+            height: 14rem;
+            width: 20rem;
+            flex-direction: column;
+            border: 1px solid ;
+            padding: 1.5rem;
+            gap: 1.5rem;
+            transition: transform 0.3s linear ;
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #h2{
+            font-size: 1.9rem;
+            font-weight: bold;
+
+        }
+        .test-avatar img{
+            height: 2.3rem;
+           margin-left: 7rem;
+        }
+        #h3{
+            color: #377fd1;
+        }
+        .test-text{
+            color: rgb(60, 58, 58);
+        }
+        #para{
+            font-weight: 500;
+        }
+        .news-container{
+            background-color: rgb(255, 255, 255);
+            padding: 0 8rem;
+            max-width: 1280px;
+            height: 35vh;
+            margin: 0 auto;
+            
+        }
+        .news-content{
+            display: flex;
+            flex-direction: row;
+            background-color: #e7e1e1;
+            height: 100%;
+            border-radius: 7px;  
+            overflow: hidden;
+        }
+        .news-left{
+            height: 100%;
+            width: 50%;
+        }
+        .news-right{
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        .news-left img{
+            height: 100%;
+            width: 100%;
+            object-fit:cover ;
+            object-position: center;
+
+        }
+        .news-title{
+            color: #1257a7;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .news-desc{
+            margin-top: 0.3rem;
+            margin-right: 7.6rem;
+        }
+        .news-btn{
+            background-color: #0c4280;
+            padding: 0.2rem;
+            color: white;
+            font-weight: 500;
+        }
+        .news-mail{
+            padding: 0.2rem;
+        }
+        .form{
+            margin-left: 0.3rem;
+        }
+        .term{
+           color: #2f85e7;
+           text-decoration: underline;
+        }
+        .policy{
+           color: #2f85e7;
+           text-decoration: underline;
+        }
+        .sign{
+            padding-left: 0.3rem;
+            text-align: left;
+        }
+        .logo-link img{
+            height: 40px;
+        }
+        .logo-link{
+            font-weight: bold;
+            font-size: 1.8rem;
+            padding-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social img{
+            height: 24px;
+        }
+        .foot-grid{
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .foot-linklist{
+            color: #4e4d4d;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            
+        }
+        .footer-container{
+            margin: 0 auto;
+            padding: 1.4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            max-width: 1280px;
+        }
+        .footer{
+            max-width: 1280px;
+            padding: 1rem 2.4rem;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+        }
+        .foot-left{
+            width: 36%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+            padding-left: 4.2rem;
+            margin-top: -0.6rem;
+            
+        }
+        .foot-logo{
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: -3.7rem;
+        }
+        .foot-text{
+           color: #777;
+           padding-left: 0.7rem;
+           font-size: 1.1rem;
+        }
+        .social{
+            padding-left: 0.7rem;
+        }
+        .footer-copy{
+            color:#3f3d3d;
+           display: flex;
+           justify-content: space-between;
+           margin: 0 auto;
+           gap: 2rem;
+        }
+        .foot-right{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap:  2.3rem;
+            padding-right: 6rem;
+           
+        }
+        
+        
+       
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+    <header><div class="container">
+        <div class="logo">
+            <img src="https://t4.ftcdn.net/jpg/05/30/22/25/240_F_530222536_UXrSnRK1dKUkcti6oXPW1GoFFMAZ4FHY.jpg" alt="icon" class="logo-icon">
+            <span class="logo-text">StudySync</span>
+        </div>
+        <nav class="nav">
+            <a href="#" class="navlink">Home</a>
+            <a href="#" class="navlink">Feature </a>
+            <a href="#" class="navlink">About</a>
+            <a href="#" class="navlink">Menu</a>
+        </nav>
+        <button class="btn">Contact Us</button>
+    </div>
+</header>
+<main>
+    <div class="contentbox">
+        <section>
+            <div class="item">
+                <div class="leftbox">
+                <span class="head">very proud to introduce</span>
+                <h1 class="text">seamless learning for brighter future</h1>
+                <p>our innovative platform offers an effortless and seamless approach to learning, Empowering students of all ages to achieve brighter  futures. Join us on a transformation journey to simplify education and unclock your full potential.  
+                </p>
+                <div class="button">
+                    <button class="btn1">Start Now </button>
+                     <button class="btn2">Take Tour</button>
+                </div>
+                </div>
+                <div class="rightbox">
+                    <img src="logo.avif" alt="bird" class="img">
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+    <div class="com-container">
+        <h2 id="h2">Trusted By The Best</h2>
+       <div class="com-grid">
+        <div class="google">Google</div>
+        <div class="linkdin">Linkdin</div>
+        <div class="microsoft">Microsoft</div>
+        <div class="vectoredu">Vector Edu</div>
+       </div>
+    </div>
+    <div class="feature">
+        <div class="feature-content">
+           <div class="main-info">
+            <h2 id="h2">Our Competitive Advantage</h2>
+            <p class="para">This is a section of a some simple filler text, Also known as a placeholder text. It shares some characterstics of real written text but is a random or otherwise generated</p>
+           </div>
+        <div class="feature-grid">
+            <!-- card 1 -->
+            <div class="feature-card">
+                <div class="feature-title">
+                    personalized learning
+                </div>
+                <div class="feature-desc">
+                    offer tailored learning experiences through AI and machine learning to cater to individual student needs.
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="feature-card">
+                <div class="feature-title">
+                    Affordability
+                </div>
+                <div class="feature-desc">
+                   provide high-quality education at an affordable price point, making it accessible to a broader audience 
+                </div>
+            </div>
+            <!-- card 3 -->
+            <div class="feature-card">
+                <div class="feature-title">
+                    Industry Parternerships
+                </div>
+                <div class="feature-desc">
+                collabrate with well-known companies and institutions to offer accredited courses and certifications, adding credibility to your offerings</div>
+            </div>
+            <!-- card 4 -->
+            <div class="feature-card">
+                <div class="feature-title">
+                   Innovative Technology
+                </div>
+                <div class="feature-desc">
+                 utilize cutting-edge technology , such as augmented reality or virtual reality, to create immersive learning experience </div>
+            </div>
+            <!-- card 5 -->
+            <div class="feature-card">
+                <div class="feature-title">
+                   Responsive Support
+                </div>
+                <div class="feature-desc">
+               provide exceptional customer support and assistance to students and educators
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div class="feature-card">
+                <div class="feature-title">
+                    Analytics and Insights
+                </div>
+                <div class="feature-desc">
+                  offer detailed progress tracking and analytics to help students and teachers moniotr preformance and make data-driven</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="test-container">
+        <div class="test-content">
+            <h2 id="h2">
+              What Others Say About Us
+            </h2>
+            <div class="test-grid">
+                <!-- card 1 -->
+                <div class="test-card">
+                    <div class="test-text">
+                      studysync revoluntionized my classroom! Engaging content and teacher resources make learning enjoyable. highly recommended for educators.
+                    </div>
+                    <div class="test-avatar">
+                         <img src="OIP.jpg" alt="">
+                    </div>
+                    <div class="test-details">
+                         <h3 id="h3">Mr. dev johnson</h3>
+                         <p id="para">English professor</p>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="test-card">
+                    <div class="test-text">
+                       studysync transformed our familys learning journey, Safe, Intercative, and progress tracking features and invaluable for parents.
+                    </div>
+                    <div class="test-avatar">
+                       <img src="OIP (1).jpg" alt="">
+                    </div>
+                    <div class="test-details">
+                        <h3 id="h3">Mark Davis</h3>
+                        <p id="para">parent</p>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="test-card">
+                    <div class="test-text">
+                        studysync, a true game-changer! flexible content, tailored assessments, and excellent support. Integral to our school district's success. </div>
+                    <div class="test-avatar">
+                        <img src="OIP (2).jpg" alt="">
+                    </div>
+                    <div class="test-details">
+                        <h3 id="h3">Dr. James carter</h3>
+                        <p id="para">Math professor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news-container">
+        <div class="news-content">
+            <!-- left part -->
+            <div class="news-left">
+                <img src="paint.jpg" alt="paint">
+            </div>
+            <!-- news part -->
+            <div class="news-right">
+                <div class="news-info">
+                    <h2 class="news-title">Get the latest updates</h2>
+                    <p class="news-desc"> Sign up for our newsletter</p>
+                </div>
+              <form class="form" > <input class="news-mail" placeholder="email">
+                      <button class="news-btn">Send</button>
+            </form>
+            <div class="sign">
+                By signing up to our newsletter you agree to our
+                <a class="term">Terms of Service</a>
+                and
+                <a class="policy">Privacy policy</a>
+            </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footer-container">
+        <div class="footer">
+                <div class="foot-left">
+                    <div class="foot-logo">
+                         <a class="logo-link"> <img src="https://t4.ftcdn.net/jpg/05/30/22/25/240_F_530222536_UXrSnRK1dKUkcti6oXPW1GoFFMAZ4FHY.jpg" alt="">
+                              StudySync
+                         </a>
+                    </div>
+                         <p class="foot-text">Seamless Learning For Brighter Futures.</p>
+            <div class="social-link">
+                <a class="social">
+                    <img src="https://t3.ftcdn.net/jpg/03/00/02/08/360_F_300020899_N275TqND1g3LDqinhrvLhDpCy4RjYG8m.jpg" alt="insta" class="insta">
+                </a>
+                <a class="social">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJKFrY-JAdMGPx747HCJJIfth_BWO7wMWQ9A&s" alt="insta" class="insta">
+                </a>
+                <a class="social">
+                    <img src="data:image/png;base64,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" alt="insta" class="insta">
+                </a>
+                <a class="social">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHjaWdL1jThxGQEdDfHxH_ePiadNNNBwbu6A&s" alt="insta" class="insta">
+                </a>
+            </div> 
+        </div>
+            <div class="foot-right">
+            <!-- col 1 -->
+        <div class="foot-column">
+                    <div class="foot-grid">
+                        Products
+                   </div>
+                <ul class="foot-linklist">
+                   <li>
+                    overview
+                   </li>
+                   <li>
+                    Solution
+                   </li>
+                   <li>
+                    Pricing
+                   </li>
+                   <li>
+                    Customers
+                   </li>
+                </ul>
+        </div>
+            <!-- col 2 -->
+        <div class="foot-column">
+                <div class="foot-grid">
+                   Company
+               </div>
+            <ul class="foot-linklist">
+               <li>
+                About
+               </li>
+               <li>
+               Investor Relation
+               </li>
+               <li>
+                Jobs
+               </li>
+               <li>
+               Press
+               </li>
+            </ul>
+        </div>
+            <!-- col 3 -->
+        <div class="foot-column">
+            <div class="foot-grid">
+               Support
+           </div>
+        <ul class="foot-linklist">
+           <li>
+            Contact
+           </li>
+           <li>
+           Documentation
+           </li>
+           <li>
+            Chat
+           </li>
+           <li>
+            FAQ
+           </li>
+        </ul>
+         </div>
+            <!-- col 4 -->
+    <div class="foot-column">
+       <div class="foot-grid">
+           Legal
+       </div>
+    <ul class="foot-linklist">
+       <li>
+       Terms Of Service
+       </li>
+       <li>
+        Privacy policy
+       </li>
+       <li>
+       Cookie Settings
+       </li>
+       
+    </ul>
+</div>
+</div>
+</div>
+        <div class="footer-copy">
+            <p>&#169; 2021 - Present StudySync. All rights reserved.</p>
+            <p>created by - Hitesh Vaidya </p>
+        </div>
+    
+    </div>
+</body>
+</html>
