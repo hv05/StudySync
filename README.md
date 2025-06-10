@@ -11,6 +11,7 @@ StudySync is a sleek and minimal educational landing page that highlights essent
 This project serves as a strong front-end template for developers looking to build or showcase educational or SaaS web interfaces.
 
 ---
-USE 
+ 🚀 How to Use
+ 
 
 
