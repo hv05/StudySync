@@ -12,7 +12,7 @@ This project serves as a strong front-end template for developers looking to bui
 
 ---
  🚀 How to Use
- https://hv05.github.io/StudySync/
+ Projects   https://hv05.github.io/StudySync/
  
 
 
